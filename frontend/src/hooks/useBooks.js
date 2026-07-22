@@ -23,7 +23,7 @@ export function useBooks() {
     return () => {
       cancelled = true
     }
-  }, [])
+})
 
   return { books, loading, error }
 }

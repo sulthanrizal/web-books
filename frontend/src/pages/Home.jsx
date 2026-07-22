@@ -1,13 +1,16 @@
 import { useBooks } from '../hooks/useBooks'
+import { deleteBook } from '../service/book.service'
+import { useEffect } from 'react'
 import './Home.css'
 
 function Home() {
   const { books, loading, error } = useBooks()
 
-  const handleDelete = (book) => {
+  const handleDelete = (id) => {
+    const book = books.find((b) => b.id === id)
     const confirmed = window.confirm(`Yakin mau hapus buku "${book.title}"?`)
     if (confirmed) {
-      alert('Fitur hapus belum diaktifkan')
+      deleteBook(book.id)
     }
   }
 
@@ -26,7 +29,7 @@ function Home() {
                 type="button"
                 className="delete-btn"
                 aria-label="Delete book"
-                onClick={() => handleDelete(book)}
+                onClick={() => handleDelete(book.id)}
               >
                 🗑
               </button>
