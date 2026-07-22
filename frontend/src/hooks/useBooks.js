@@ -23,7 +23,11 @@ export function useBooks() {
     return () => {
       cancelled = true
     }
-})
+  }, [])
 
-  return { books, loading, error }
+  const removeBook = (id) => {
+    setBooks((prev) => prev.filter((book) => book.id !== id))
+  }
+
+  return { books, loading, error, removeBook }
 }
