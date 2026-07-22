@@ -1,0 +1,50 @@
+#home {
+  padding: 32px 24px;
+  text-align: left;
+}
+
+.error {
+  color: #d33;
+}
+
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: left;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background: var(--accent-bg);
+}
+
+.book-card h2 {
+  margin-bottom: 4px;
+}
+
+.book-card p {
+  color: var(--text);
+}
